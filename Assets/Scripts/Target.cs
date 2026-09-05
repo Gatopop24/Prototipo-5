@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
-    private float minSpeed = 12;
-    private float maxSpeed = 16;
+    [SerializeField] private float minSpeed = 12;
+    [SerializeField] private float maxSpeed = 16;
     private float maxTorque = 10;
     private float xRange = 4;
-    private float ySpawnPos = -1;
+    private const float ySpawnPos = -1;
     public int pointValue;
     public ParticleSystem explosionParticle;
     private GameManager gameManager;
