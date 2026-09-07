@@ -12,7 +12,7 @@ public class PlayerControllerLab : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
         ConstraintPlayerPosition();
