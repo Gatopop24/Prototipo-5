@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  pooledObject: 1
 --- !u!1001 &9061945304982210535
 PrefabInstance:
   m_ObjectHideFlags: 0

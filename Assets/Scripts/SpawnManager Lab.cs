@@ -31,8 +31,19 @@ public class SpawnManagerLab : MonoBehaviour
         int randomIndex = Random.Range(0, enemies.Length);
 
         Vector3 spawnPos = new Vector3(xEnemySpawn, ySpawn, randomZ);
-
-        Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].gameObject.transform.rotation);
+        if(randomIndex == 3)
+        {
+            GameObject pooledEnemy = ObjectPooler.SharedInstance.GetPooledObject();
+            if (pooledEnemy != null)
+            {
+                pooledEnemy.SetActive(true);
+                pooledEnemy.transform.position = spawnPos;
+            }
+        }
+        else
+        {
+            Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].gameObject.transform.rotation);
+        }
     }
 
     void SpawnPowerup()

@@ -4,6 +4,7 @@ public class MoveDown : MonoBehaviour
 {
     private float xDestroy = 10.0f;
     public float speed = 100.0f;
+    [SerializeField] private bool pooledObject;
     private Rigidbody objectRb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +19,14 @@ public class MoveDown : MonoBehaviour
 
         if(transform.position.x > xDestroy)
         {
-            Destroy(gameObject);
+            if(pooledObject == true)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
