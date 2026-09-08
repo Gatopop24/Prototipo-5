@@ -13,19 +13,13 @@ public class SpawnManagerLab : MonoBehaviour
     private float startDelay = 1.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         InvokeRepeating("SpawnRandomEnemy", startDelay, enemySpawnTime);
         InvokeRepeating("SpawnPowerup", startDelay, powerupSpawnTime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void SpawnRandomEnemy()
+    public void SpawnRandomEnemy()
     {
         float randomZ = Random.Range(-zSpawnRange, zSpawnRange );
         int randomIndex = Random.Range(0, enemies.Length);
@@ -46,7 +40,7 @@ public class SpawnManagerLab : MonoBehaviour
         }
     }
 
-    void SpawnPowerup()
+    public void SpawnPowerup()
     {
         float randomZ = Random.Range(-zSpawnRange, zSpawnRange);
         float randomX = Random.Range(-xPowerupRange, xPowerupRange);
